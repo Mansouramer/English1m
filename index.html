@@ -209,11 +209,6 @@
             text-align: left;
         }
 
-        .arabic-preview {
-            direction: rtl;
-            text-align: right;
-        }
-
         .whatsapp-btn {
             display: inline-block;
             background: #25D366;
@@ -376,27 +371,29 @@
 
         <!-- تسجيل الطلاب والصفوف والجدول -->
         <div class="section-card">
-            <h3>✏️ تسجيل طلاب الصف الأول المتوسط والفصول الدراسية</h3>
+            <h3>✏️ تسجيل طلاب الصف الأول المتوسط والصفوف الدراسية</h3>
             
             <div class="form-row">
                 <input type="text" id="studentName" placeholder="اسم الطالب (Student Name)">
                 <select id="studentClassSelect">
-                    <option value="">-- اختر الفصل الدراسي --</option>
+                    <option value="">-- اختر الصف الدراسي --</option>
                     <option value="أول متوسط/1">أول متوسط/1</option>
                     <option value="أول متوسط/2">أول متوسط/2</option>
                     <option value="أول متوسط/3">أول متوسط/3</option>
                     <option value="أول متوسط/4">أول متوسط/4</option>
+                    <option value="أول متوسط/5">أول متوسط/5</option>
+                    <option value="أول متوسط/6">أول متوسط/6</option>
                 </select>
-                <input type="text" id="studentClassCustom" placeholder="أو كتابة فصل آخر..." style="max-width: 160px;">
+                <input type="text" id="studentClassCustom" placeholder="أو كتابة صف آخر..." style="max-width: 160px;">
                 <input type="tel" id="studentPhone" placeholder="رقم جوال ولي الأمر (مثال: 05xxxxxxx)">
                 <button onclick="addStudent()">➕ إضافة طالب</button>
             </div>
 
-            <!-- خيار فلترة وتصفية الجدول حسب الفصل -->
+            <!-- خيار فلترة وتصفية الجدول حسب الصف -->
             <div class="form-row" style="align-items: center; background: rgba(0,0,0,0.03); padding: 8px; border-radius: 6px;">
-                <span style="font-weight: bold; font-size: 14px;">🔍 تصفية الجدول حسب الفصل:</span>
+                <span style="font-weight: bold; font-size: 14px;">🔍 تصفية الجدول حسب الصف:</span>
                 <select id="filterClass" onchange="render()" style="max-width: 220px;">
-                    <option value="ALL">عرض جميع الفصول</option>
+                    <option value="ALL">عرض جميع الصفوف</option>
                 </select>
             </div>
 
@@ -405,7 +402,7 @@
                     <thead>
                         <tr>
                             <th>اسم الطالب</th>
-                            <th>🏫 الفصل</th>
+                            <th>🏫 الصف</th>
                             <th>📱 رقم الجوال</th>
                             <th>🔴 الغياب</th>
                             <th>✋ المشاركة</th>
@@ -562,7 +559,6 @@
 
         // منهج اللغة الإنجليزية الصف الأول المتوسط (Mega Goal - المنهج السعودي)
         const defaultLessons = [
-            // Mega Goal 1 (Term 1 / Term 2 structure)
             { chapter: "Unit 1: Nice to Meet You!", title: "1. Listen and Discuss", desc: "Greetings, introductions, verb 'to be', and personal pronouns." },
             { chapter: "Unit 1: Nice to Meet You!", title: "2. Grammar & Listening", desc: "Yes/No questions with 'to be', short answers, and alphabet." },
             { chapter: "Unit 1: Nice to Meet You!", title: "3. Conversation & Reading", desc: "Meeting people for the first time and reading profiles." },
@@ -868,11 +864,11 @@
             const filterSelect = document.getElementById('filterClass');
             const currentFilter = filterSelect.value;
             
-            const defaultClasses = ["أول متوسط/1", "أول متوسط/2", "أول متوسط/3", "أول متوسط/4"];
+            const defaultClasses = ["أول متوسط/1", "أول متوسط/2", "أول متوسط/3", "أول متوسط/4", "أول متوسط/5", "أول متوسط/6"];
             const existingClasses = students.map(s => s.studentClass || 'أول متوسط/1');
             const allClasses = [...new Set([...defaultClasses, ...existingClasses])];
             
-            filterSelect.innerHTML = '<option value="ALL">عرض جميع الفصول</option>';
+            filterSelect.innerHTML = '<option value="ALL">عرض جميع الصفوف</option>';
             allClasses.forEach(cls => {
                 filterSelect.innerHTML += `<option value="${cls}">${cls}</option>`;
             });
@@ -1001,7 +997,6 @@
 
             if (stIndex === '' || lIndex === '') {
                 preview.textContent = 'اختر موضوع الدرس والمهارة أعلاه لتوليد نص الرسالة تلقائياً...';
-                preview.classList.remove('arabic-preview');
                 btn.href = '#';
                 return;
             }
@@ -1014,7 +1009,6 @@
             const msg = `${headerInfo}Dear Parent of student: ${st.name} (${st.studentClass || 'أول متوسط/1'})\nWe would like to update you on today's English lesson:\n📘 ${l.chapter} - ${l.title}\n📌 Lesson Status: ${statusLabel}\n📝 Key Skills & Notes: ${l.desc}\n⭐ Mastered Skills: ${st.skills || 0}\n\nThank you for your continuous cooperation and support.`;
 
             preview.textContent = msg;
-            preview.classList.remove('arabic-preview');
 
             const phone = getCleanPhone(st.phone);
             if (phone) {
@@ -1032,7 +1026,6 @@
 
             if (stIndex === '' || !mKey) {
                 preview.textContent = 'اختر الطالب والرسالة لعرض النص...';
-                preview.classList.remove('arabic-preview');
                 btn.href = '#';
                 return;
             }
@@ -1043,7 +1036,6 @@
             const msg = `${headerInfo}${msgTemplate}\n\nStudent: ${st.name} (${st.studentClass || 'أول متوسط/1'})`;
 
             preview.textContent = msg;
-            preview.classList.remove('arabic-preview');
 
             const phone = getCleanPhone(st.phone);
             if (phone) {
