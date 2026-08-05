@@ -20,20 +20,39 @@
             --excel: #1d6f42;
         }
 
-        /* ثيمات ألوان الخلفية */
-        body.theme-default { --bg: #f8fafc; --card-bg: #ffffff; --text: #1e293b; }
-        body.theme-blue { --bg: #e0f2fe; --card-bg: #ffffff; --text: #1e3a8a; --accent: #bae6fd; }
-        body.theme-dark { --bg: #0f172a; --card-bg: #1e3a8a; --text: #f1f5f9; }
-        body.theme-emerald { --bg: #ecfdf5; --card-bg: #ffffff; --text: #065f46; }
+        /* ثيمات ألوان الخلفية (تدرج لونين جذابين) */
+        body.theme-default { 
+            --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); 
+            --card-bg: #ffffff; 
+            --text: #1e293b; 
+        }
+        body.theme-blue { 
+            --bg: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); 
+            --card-bg: #ffffff; 
+            --text: #1e3a8a; 
+            --accent: #bae6fd; 
+        }
+        body.theme-dark { 
+            --bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
+            --card-bg: #1e3a8a; 
+            --text: #f1f5f9; 
+        }
+        body.theme-emerald { 
+            --bg: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); 
+            --card-bg: #ffffff; 
+            --text: #065f46; 
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
+            background: var(--bg);
+            background-attachment: fixed;
             color: var(--text);
             margin: 0;
             padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background 0.3s ease, color 0.3s ease;
             user-select: none;
+            min-height: 100vh;
         }
 
         .top-banner {
@@ -85,13 +104,18 @@
             cursor: pointer;
             padding: 0;
             transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .theme-btn:hover { transform: scale(1.2); }
-        .btn-theme-1 { background-color: #f8fafc; border-color: #2563eb; }
-        .btn-theme-2 { background-color: #e0f2fe; border-color: #1e3a8a; }
-        .btn-theme-3 { background-color: #0f172a; }
-        .btn-theme-4 { background-color: #ecfdf5; border-color: #059669; }
+        .btn-theme-1 { background: linear-gradient(135deg, #f8fafc, #94a3b8); border-color: #2563eb; }
+        .btn-theme-2 { background: linear-gradient(135deg, #38bdf8, #0284c7); border-color: #1e3a8a; }
+        .btn-theme-3 { background: linear-gradient(135deg, #334155, #0f172a); border-color: #38bdf8; }
+        .btn-theme-4 { background: linear-gradient(135deg, #34d399, #059669); border-color: #065f46; }
 
         .container { max-width: 1200px; margin: 0 auto; }
 
@@ -348,13 +372,13 @@
         <div>إعداد المعلم: مشعل</div>
         <p>لوحة تحكم معلم اللغة الإنجليزية - الصف الأول المتوسط (وفق المنهج السعودي - Mega Goal)</p>
 
-        <!-- أزرار تغيير خلفية الصفحة -->
+        <!-- أزرار تغيير خلفية الصفحة مع أيقونات ملونة وجذابة -->
         <div class="theme-switcher">
-            <span style="font-size: 12px; margin-left: 5px;">🎨 مظهر الخلفية:</span>
-            <button class="theme-btn btn-theme-1" title="افتراضي" onclick="setTheme('theme-default')"></button>
-            <button class="theme-btn btn-theme-2" title="أزرق سماوي" onclick="setTheme('theme-blue')"></button>
-            <button class="theme-btn btn-theme-3" title="ليلي (داكن)" onclick="setTheme('theme-dark')"></button>
-            <button class="theme-btn btn-theme-4" title="أخضر زمردي" onclick="setTheme('theme-emerald')"></button>
+            <span style="font-size: 12px; margin-left: 5px;">🎨 المظهر:</span>
+            <button class="theme-btn btn-theme-1" title="افتراضي" onclick="setTheme('theme-default')">💎</button>
+            <button class="theme-btn btn-theme-2" title="أزرق سماوي" onclick="setTheme('theme-blue')">🌊</button>
+            <button class="theme-btn btn-theme-3" title="ليلي (داكن)" onclick="setTheme('theme-dark')">🌙</button>
+            <button class="theme-btn btn-theme-4" title="أخضر زمردي" onclick="setTheme('theme-emerald')">🌿</button>
         </div>
     </div>
 
