@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المعلمة تهاني مهنا الحجيلي - الابتدائية الأولى للبنات (لوحة تحكم مادة اللغة الإنجليزية)</title>
+    <title>المعلم أحمد - الابتدائية الأولى للبنين (لوحة تحكم مادة اللغة الإنجليزية)</title>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>
         :root {
@@ -123,9 +123,9 @@
     </div>
 
     <div class="header">
-        <h1>الابتدائية الأولى للبنات</h1>
-        <div>إعداد المعلمة: تهاني مهنا الحجيلي</div>
-        <p>لوحة تحكم معلمة مادة اللغة الإنجليزية للمرحلة الابتدائية (وفق المنهج السعودي)</p>
+        <h1>الابتدائية الأولى للبنين</h1>
+        <div>إعداد المعلم: أحمد</div>
+        <p>لوحة تحكم معلم مادة اللغة الإنجليزية للمرحلة الابتدائية (وفق المنهج السعودي)</p>
         <div class="subscription-badge">⏳ نهاية الاشتراك: 2027/07/01</div>
 
         <div class="theme-switcher">
@@ -156,7 +156,7 @@
 
         <!-- الإحصائيات -->
         <div class="stats-grid no-print">
-            <div class="stat-card"><h3>👥 إجمالي الطالبات</h3><p id="totalStudents">0</p></div>
+            <div class="stat-card"><h3>👥 إجمالي الطلاب</h3><p id="totalStudents">0</p></div>
             <div class="stat-card"><h3>⭐ إتقان الدروس</h3><p id="totalSkills">0%</p></div>
             <div class="stat-card"><h3>✋ مجموع المشاركات</h3><p id="totalParticipation">0</p></div>
             <div class="stat-card"><h3>📚 الواجبات المنجزة</h3><p id="totalHomework">0</p></div>
@@ -166,18 +166,18 @@
             <div class="stat-card"><h3>✅ الدروس المنفذة</h3><p id="totalExecutedLessons">0 / 0</p></div>
         </div>
 
-        <!-- تسجيل الطالبات والصفوف والجدول -->
+        <!-- تسجيل الطلاب والصفوف والجدول -->
         <div class="section-card" id="studentsTableSection">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; margin-bottom: 15px;">
-                <h3 style="margin: 0; border: none; padding: 0;">✏️ تسجيل الطالبات والصفوف ومتابعتهن</h3>
+                <h3 style="margin: 0; border: none; padding: 0;">✏️ تسجيل الطلاب والصفوف ومتابعتهم</h3>
                 <button class="btn-print no-print" onclick="printSection('studentsTableSection')">🖨️ طباعة الجدول</button>
             </div>
             
             <div class="form-row no-print">
-                <input type="text" id="studentName" placeholder="اسم الطالبة (Student Name)">
+                <input type="text" id="studentName" placeholder="اسم الطالب (Student Name)">
                 <input type="text" id="studentClassCustom" placeholder="اكتب الصف (مثال: رابع ابتدائي أول)">
                 <input type="tel" id="studentPhone" maxlength="10" placeholder="رقم جوال ولي الأمر (10 أرقام)">
-                <button onclick="addStudent()">➕ إضافة طالبة</button>
+                <button onclick="addStudent()">➕ إضافة طالب</button>
             </div>
 
             <div style="margin-top: 20px;" class="no-print">
@@ -186,15 +186,15 @@
             </div>
 
             <div class="form-row no-print" style="align-items: center; background: rgba(0,0,0,0.03); padding: 8px; border-radius: 6px; margin-top: 15px;">
-                <span style="font-weight: bold; font-size: 14px;">🔍 بحث عن طالبة:</span>
-                <input type="text" id="filterStudentNameInput" placeholder="اكتب اسم الطالبة للبحث..." oninput="filterTableByStudentInput()" style="max-width: 320px;">
+                <span style="font-weight: bold; font-size: 14px;">🔍 بحث عن طالب:</span>
+                <input type="text" id="filterStudentNameInput" placeholder="اكتب اسم الطالب للبحث..." oninput="filterTableByStudentInput()" style="max-width: 320px;">
             </div>
 
             <div style="overflow-x: auto;">
                 <table>
                     <thead>
                         <tr>
-                            <th>اسم الطالبة</th>
+                            <th>اسم الطالب</th>
                             <th>🏫 الصف</th>
                             <th>📱 رقم الجوال</th>
                             <th>🔴 الغياب</th>
@@ -232,12 +232,12 @@
         <!-- تتبع إتقان الدروس -->
         <div class="section-card" id="lessonMasterySection">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; margin-bottom: 15px;">
-                <h3 style="margin: 0; border: none; padding: 0;">🎯 تتبع إتقان كل درس لكل طالبة (متقنة / بحاجة مراجعة)</h3>
+                <h3 style="margin: 0; border: none; padding: 0;">🎯 تتبع إتقان كل درس لكل طالب (متقن / بحاجة مراجعة)</h3>
                 <button class="btn-print" onclick="printSection('lessonMasterySection')">🖨️ طباعة التقرير</button>
             </div>
             <div class="form-row no-print">
                 <select id="masteryLessonSelect" onchange="renderMasteryTable()">
-                    <option value="">-- اختر الدرس لتحديد حالة الإتقان للطالبات --</option>
+                    <option value="">-- اختر الدرس لتحديد حالة الإتقان للطلاب --</option>
                 </select>
                 <select id="masteryClassSelect" onchange="renderMasteryTable()">
                     <option value="">-- جميع الصفوف --</option>
@@ -246,7 +246,7 @@
             <div id="masterySummaryBox" class="sub-box" style="display: none; margin-bottom: 15px;">
                 <h5>📊 إحصائية إتقان الدرس المحدد</h5>
                 <div class="student-details" style="margin: 10px 0;">
-                    <div class="detail-item"><span>المتقنات</span><strong id="countMastered" style="color: var(--success);">0</strong></div>
+                    <div class="detail-item"><span>المتقنون</span><strong id="countMastered" style="color: var(--success);">0</strong></div>
                     <div class="detail-item"><span>بحاجة لمراجعة</span><strong id="countReview" style="color: var(--danger);">0</strong></div>
                 </div>
             </div>
@@ -254,7 +254,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>اسم الطالبة</th>
+                            <th>اسم الطالب</th>
                             <th>🏫 الصف</th>
                             <th>حالة الإتقان</th>
                             <th class="no-print">تبديل الحالة</th>
@@ -289,7 +289,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>اسم الطالبة</th>
+                            <th>اسم الطالب</th>
                             <th>🏫 الصف</th>
                             <th>📝 اختبار الفترة الأولى (من 20)</th>
                             <th>📝 اختبار الفترة الثانية (من 20)</th>
@@ -303,22 +303,22 @@
             </div>
         </div>
 
-        <!-- استعلام عن طالبة وتفاصيل الرسائل التشجيعية الفردية -->
+        <!-- استعلام عن طالب وتفاصيل الرسائل التشجيعية الفردية -->
         <div class="section-card" id="studentReportSection">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; margin-bottom: 15px;">
-                <h3 style="margin: 0; border: none; padding: 0;">🔍 استعلام وتتبع طالبة محددة</h3>
-                <button class="btn-print no-print" onclick="printSection('studentReportSection')">🖨️ طباعة تقرير الطالبة</button>
+                <h3 style="margin: 0; border: none; padding: 0;">🔍 استعلام وتتبع طالب محدد</h3>
+                <button class="btn-print no-print" onclick="printSection('studentReportSection')">🖨️ طباعة تقرير الطالب</button>
             </div>
             <div class="form-row no-print">
                 <div class="searchable-dropdown-container">
-                    <input type="text" id="studentSearchInput" class="searchable-input" placeholder="اكتب اسم الطالبة للبحث بالكيبورد..." oninput="filterStudentDropdown()" onfocus="showStudentDropdown()" autocomplete="off">
+                    <input type="text" id="studentSearchInput" class="searchable-input" placeholder="اكتب اسم الطالب للبحث بالكيبورد..." oninput="filterStudentDropdown()" onfocus="showStudentDropdown()" autocomplete="off">
                     <div id="studentDropdownList" class="searchable-dropdown-list"></div>
                 </div>
             </div>
 
             <div id="studentCard" style="display: none;">
                 <div>
-                    <h4>سجل الطالبة: <span id="selectedName"></span> (<span id="selectedClassBadge" class="class-badge"></span>)</h4>
+                    <h4>سجل الطالب: <span id="selectedName"></span> (<span id="selectedClassBadge" class="class-badge"></span>)</h4>
                     <div class="student-details">
                         <div class="detail-item"><span>المشاركات</span><strong id="sdParticipation">0</strong></div>
                         <div class="detail-item"><span>الواجبات</span><strong id="sdHomework">0</strong></div>
@@ -344,7 +344,7 @@
                 </div>
 
                 <div class="sub-box">
-                    <h5>✨ إرسال رسائل تشجيعية وشكر وتقدير للطالبة</h5>
+                    <h5>✨ إرسال رسائل تشجيعية وشكر وتقدير للطالب</h5>
                     <div class="form-row no-print">
                         <select id="selectMotivation" onchange="updateMotivationMsg()">
                             <option value="">-- اختر الرسالة التشجيعية والتحفيزية --</option>
@@ -422,8 +422,8 @@
     <div id="toast" class="toast">✅ تم حفظ البيانات تلقائياً!</div>
 
     <script>
-        const TEACHER_NAME = "تهاني مهنا الحجيلي";
-        const SCHOOL_NAME = "الابتدائية الأولى للبنات";
+        const TEACHER_NAME = "أحمد";
+        const SCHOOL_NAME = "الابتدائية الأولى للبنين";
 
         let currentGrade = localStorage.getItem('mansour_current_grade_english_v5') || 'الأول الابتدائي';
         document.getElementById('globalGradeSelect').value = currentGrade;
@@ -434,11 +434,11 @@
         const rowsPerPage = 20;
 
         const defaultMotivations = [
-            { id: "1", title: "1. نجمة اللغة الإنجليزية المتألقة", text: "🌟 **نجمة اللغة الإنجليزية المتألقة** 🌟\nعزيزي ولي الأمر، نفخر اليوم بتميز ابنتكم وتألقها في حصة اللغة الإنجليزية ونطق الكلمات بثقة وحماس. بوركت جهودكم!" },
-            { id: "2", title: "2. تفوق ملحوظ في القراءة والنطق", text: "🗣️ **تفوق ملحوظ في مهارات النطق والكلام** 🗣️\nعزيزي ولي الأمر، أظهرت ابنتكم اليوم مهارات رائعة في القراءة والتحدث باللغة الإنجليزية بطلاقة. أحسنت صنعاً!" },
-            { id: "3", title: "3. دقة وإتقان في كتابة الكلمات", text: "✍️ **دقة وإتقان في الكتابة والتهجئة** ✍️\nعزيزي ولي الأمر، تميزت ابنتكم اليوم بدقة تهجئة الكلمات الإنجليزية وترتيب الجمل بشكل ممتاز. بارك الله في جهودها!" },
-            { id: "4", title: "4. مشاركة نشطة وفعالة في الحصة", text: "✋ **مشاركة نشطة وتفاعل متميز** ✋\nعزيزي ولي الأمر، تميزت ابنتكم اليوم بحرصها العالي ومشاركتها النشطة في الأنشطة الصفية للغة الإنجليزية." },
-            { id: "5", title: "5. تنظيم رائع للدفتر وواجبات مرتبة", text: "📝 **تنظيم رائع للواجبات والأنشطة** 📝\nعزيزي ولي الأمر، نشكر لكم متابعتكم المنزلية. لقد كان واجب ابنتكم اليوم منظماً، دقيقاً، ومرتباً للغاية." }
+            { id: "1", title: "1. نجم اللغة الإنجليزية المتألق", text: "🌟 **نجم اللغة الإنجليزية المتألق** 🌟\nعزيزي ولي الأمر، نفخر اليوم بتميز ابنك وتألقه في حصة اللغة الإنجليزية ونطق الكلمات بثقة وحماس. بوركت جهودكم!" },
+            { id: "2", title: "2. تفوق ملحوظ في القراءة والنطق", text: "🗣️ **تفوق ملحوظ في مهارات النطق والكلام** 🗣️\nعزيزي ولي الأمر، أظهر ابنك اليوم مهارات رائعة في القراءة والتحدث باللغة الإنجليزية بطلاقة. أحسن صنعاً!" },
+            { id: "3", title: "3. دقة وإتقان في كتابة الكلمات", text: "✍️ **دقة وإتقان في الكتابة والتهجئة** ✍️\nعزيزي ولي الأمر، تميز ابنك اليوم بدقة تهجئة الكلمات الإنجليزية وترتيب الجمل بشكل ممتاز. بارك الله في جهوده!" },
+            { id: "4", title: "4. مشاركة نشطة وفعالة في الحصة", text: "✋ **مشاركة نشطة وتفاعل متميز** ✋\nعزيزي ولي الأمر، تميز ابنك اليوم بحرصه العالي ومشاركته النشطة في الأنشطة الصفية للغة الإنجليزية." },
+            { id: "5", title: "5. تنظيم رائع للدفتر وواجبات مرتبة", text: "📝 **تنظيم رائع للواجبات والأنشطة** 📝\nعزيزي ولي الأمر، نشكر لكم متابعتكم المنزلية. لقد كان واجب ابنك اليوم منظماً، دقيقاً، ومرتباً للغاية." }
         ];
 
         let customMotivations = JSON.parse(localStorage.getItem('mansour_custom_motivations_english_v5')) || defaultMotivations;
@@ -550,7 +550,7 @@
         function renderMasteryDropdowns() {
             const masterySelect = document.getElementById('masteryLessonSelect');
             const currentVal = masterySelect.value;
-            masterySelect.innerHTML = '<option value="">-- اختر الدرس لتحديد حالة الإتقان للطالبات --</option>';
+            masterySelect.innerHTML = '<option value="">-- اختر الدرس لتحديد حالة الإتقان للطلاب --</option>';
             lessons.forEach((l, idx) => {
                 masterySelect.innerHTML += `<option value="${idx}">[${l.chapter}] ${l.title}</option>`;
             });
@@ -569,7 +569,7 @@
             const title = document.getElementById('newLessonTitle').value.trim();
             const desc = document.getElementById('newLessonDesc').value.trim();
             if (!title) { alert('يرجى كتابة عنوان الوحدة أو الدرس'); return; }
-            lessons.push({ chapter: "إضافات المعلمة", title: title, desc: desc || 'لا توجد تفاصيل إضافية' });
+            lessons.push({ chapter: "إضافات المعلم", title: title, desc: desc || 'لا توجد تفاصيل إضافية' });
             localStorage.setItem(getStorageKeyForLessons(), JSON.stringify(lessons));
             document.getElementById('newLessonTitle').value = '';
             document.getElementById('newLessonDesc').value = '';
@@ -615,7 +615,7 @@
         }
 
         function deleteLesson(index) {
-            if (confirm('هل أنت متأكدة من حذف هذا الدرس؟')) {
+            if (confirm('هل أنت متأكد من حذف هذا الدرس؟')) {
                 lessons.splice(index, 1);
                 localStorage.setItem(getStorageKeyForLessons(), JSON.stringify(lessons));
                 renderLessons();
@@ -666,7 +666,7 @@
             const name = document.getElementById('studentName').value.trim();
             const sClass = document.getElementById('studentClassCustom').value.trim() || currentGrade;
             const phone = document.getElementById('studentPhone').value.trim();
-            if(!name) { alert('الرجاء إدخال اسم الطالبة'); return; }
+            if(!name) { alert('الرجاء إدخال اسم الطالب'); return; }
             if(phone && phone.length !== 10) { alert('رقم جوال ولي الأمر يجب أن يكون مكوناً من 10 أرقام'); return; }
 
             students.push({ name: name, classCustom: sClass, phone: phone, absence: 0, participation: 0, homework: 0, projects: 0, messages: 0, exam1: 0, exam2: 0 });
@@ -674,7 +674,7 @@
             document.getElementById('studentName').value = '';
             document.getElementById('studentPhone').value = '';
             render();
-            showToast('➕ تمت إضافة الطالبة بنجاح!');
+            showToast('➕ تمت إضافة الطالب بنجاح!');
         }
 
         function renderStudentsTable() {
@@ -692,7 +692,7 @@
             const pageData = filtered.slice(startIdx, startIdx + rowsPerPage);
 
             if(pageData.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="9" style="padding: 20px; opacity: 0.7;">لا توجد بيانات طالبات مسجلة حالياً.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="9" style="padding: 20px; opacity: 0.7;">لا توجد بيانات طلاب مسجلة حالياً.</td></tr>`;
                 document.getElementById('paginationInfo').textContent = `عرض 0 من 0`;
                 document.getElementById('pageIndicator').textContent = `1 / 1`;
                 return;
@@ -714,7 +714,7 @@
                 `;
                 tbody.appendChild(tr);
             });
-            document.getElementById('paginationInfo').textContent = `عرض من ${startIdx + 1} إلى ${Math.min(startIdx + rowsPerPage, totalRows)} من أصل ${totalRows} طالبة`;
+            document.getElementById('paginationInfo').textContent = `عرض من ${startIdx + 1} إلى ${Math.min(startIdx + rowsPerPage, totalRows)} من أصل ${totalRows} طالب`;
             document.getElementById('pageIndicator').textContent = `${currentPage} / ${totalPages}`;
         }
 
@@ -730,11 +730,11 @@
         }
 
         function deleteStudent(index) {
-            if(confirm('هل أنت متأكدة من حذف هذه الطالبة؟')) {
+            if(confirm('هل أنت متأكد من حذف هذا الطالب؟')) {
                 students.splice(index, 1);
                 localStorage.setItem(getStorageKeyForStudents(), JSON.stringify(students));
                 render();
-                showToast('🗑️ تم حذف الطالبة بنجاح!');
+                showToast('🗑️ تم حذف الطالب بنجاح!');
             }
         }
 
@@ -773,7 +773,7 @@
 
         function deleteEntireClass(cName, event) {
             event.stopPropagation();
-            if(confirm(`هل أنت متأكدة من حذف جميع طالبات الصف (${cName})؟`)) {
+            if(confirm(`هل أنت متأكد من حذف جميع طلاب الصف (${cName})؟`)) {
                 students = students.filter(s => (s.classCustom || currentGrade) !== cName);
                 localStorage.setItem(getStorageKeyForStudents(), JSON.stringify(students));
                 if(activeQueryClass === cName) activeQueryClass = '';
@@ -821,7 +821,7 @@
             let filteredStudents = students;
             if(selectedClass) filteredStudents = students.filter(s => (s.classCustom || currentGrade) === selectedClass);
             if(filteredStudents.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="4" style="padding: 20px; opacity: 0.7;">لا توجد طالبات مسجلات.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="4" style="padding: 20px; opacity: 0.7;">لا توجد طلاب مسجلون.</td></tr>`;
                 summaryBox.style.display = 'none';
                 return;
             }
@@ -838,8 +838,8 @@
                 tr.innerHTML = `
                     <td><strong>${s.name}</strong></td>
                     <td><span class="class-badge">${s.classCustom || currentGrade}</span></td>
-                    <td><span style="font-weight:bold; color: ${isMastered ? 'var(--success)' : 'var(--danger)'};">${isMastered ? '✅ متقنة' : '⚠️ بحاجة مراجعة'}</span></td>
-                    <td class="no-print"><button class="mastery-btn ${isMastered ? 'mastered' : 'review'}" onclick="toggleStudentMastery(${globalIdx}, ${lessonIdx})">${isMastered ? 'تحويل لمراجعة' : 'تحويل لمتقنة'}</button></td>
+                    <td><span style="font-weight:bold; color: ${isMastered ? 'var(--success)' : 'var(--danger)'};">${isMastered ? '✅ متقن' : '⚠️ بحاجة مراجعة'}</span></td>
+                    <td class="no-print"><button class="mastery-btn ${isMastered ? 'mastered' : 'review'}" onclick="toggleStudentMastery(${globalIdx}, ${lessonIdx})">${isMastered ? 'تحويل لمراجعة' : 'تحويل لمتقن'}</button></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -870,7 +870,7 @@
 
             const classStudents = students.filter(s => (s.classCustom || currentGrade) === selectedClass);
             if(classStudents.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="5" style="padding: 20px; opacity: 0.7;">لا توجد طالبات في هذا الصف.</td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="5" style="padding: 20px; opacity: 0.7;">لا توجد طلاب في هذا الصف.</td></tr>`;
                 analysisBox.style.display = 'none';
                 return;
             }
@@ -889,7 +889,7 @@
                     <td><span class="class-badge">${s.classCustom || currentGrade}</span></td>
                     <td><input type="text" value="${s.exam1 || 0}" style="width:70px; text-align:center;" oninput="updateExamScore(${globalIndex}, 'exam1', this.value)"></td>
                     <td><input type="text" value="${s.exam2 || 0}" style="width:70px; text-align:center;" oninput="updateExamScore(${globalIndex}, 'exam2', this.value)"></td>
-                    <td class="no-print"><a href="https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=${encodeURIComponent('ولي أمر الطالبة ' + s.name + '، درجات مادة اللغة الإنجليزية:\n- اختبار 1: ' + (s.exam1 || 0) + '/20\n- اختبار 2: ' + (s.exam2 || 0) + '/20')}" target="_blank" class="whatsapp-btn" style="padding:4px 10px; font-size:12px;" onclick="incrementMessageCount(${globalIndex})">📤 إرسال عبر واتساب</a></td>
+                    <td class="no-print"><a href="https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=${encodeURIComponent('ولي أمر الطالب ' + s.name + '، درجات مادة اللغة الإنجليزية:\n- اختبار 1: ' + (s.exam1 || 0) + '/20\n- اختبار 2: ' + (s.exam2 || 0) + '/20')}" target="_blank" class="whatsapp-btn" style="padding:4px 10px; font-size:12px;" onclick="incrementMessageCount(${globalIndex})">📤 إرسال عبر واتساب</a></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -954,7 +954,7 @@
             const btn = document.getElementById('whatsappLessonBtn');
             if(lessonIdx === "") { preview.textContent = "اختر الدرس أعلاه لتوليد نص الرسالة..."; btn.href = "#"; return; }
             const l = lessons[lessonIdx];
-            const msg = `عزيزي ولي أمر الطالبة / ${s.name}\nنحيطكم علماً بأننا تناولنا اليوم في مادة اللغة الإنجليزية:\n📘 (${l.chapter}) - ${l.title}\n💡 المهارات والمفردات: ${l.desc}\nمع تحيات المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            const msg = `عزيزي ولي أمر الطالب / ${s.name}\nنحيطكم علماً بأننا تناولنا اليوم في مادة اللغة الإنجليزية:\n📘 (${l.chapter}) - ${l.title}\n💡 المهارات والمفردات: ${l.desc}\nمع تحيات المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
             preview.textContent = msg;
             btn.href = `https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=` + encodeURIComponent(msg);
         }
@@ -978,7 +978,7 @@
                 text = customMotivations[idx].text;
             }
 
-            const finalMsg = `إلى ولي أمر الطالبة / ${s.name}\n\n${text}\n\nمع خالص الشكر والتقدير، المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            const finalMsg = `إلى ولي أمر الطالب / ${s.name}\n\n${text}\n\nمع خالص الشكر والتقدير، المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
             preview.textContent = finalMsg;
             const formattedPhone = s.phone ? `966${s.phone.replace(/^0+/, '')}` : '';
             btn.href = `https://wa.me/${formattedPhone}?text=` + encodeURIComponent(finalMsg);
@@ -1024,7 +1024,7 @@
                 msg += `📝 المطلوب: حل تدريبات الدرس في كتاب النشاط.\n`;
             }
             if(note) msg += `📌 ملاحظات: ${note}\n`;
-            msg += `\nمع خالص الشكر، المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            msg += `\nمع خالص الشكر، المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
             preview.textContent = msg;
         }
 
@@ -1038,7 +1038,7 @@
                 targetStudents = students.filter(s => (s.classCustom || currentGrade) === targetClass);
             }
             targetStudents = targetStudents.filter(s => s.phone && s.phone.trim() !== '');
-            if(targetStudents.length === 0) { alert('لا توجد أرقام جوالات مسجلة للطالبات في الصف المستهدف'); return; }
+            if(targetStudents.length === 0) { alert('لا توجد أرقام جوالات مسجلة للطلاب في الصف المستهدف'); return; }
 
             const baseMsg = document.getElementById('bulkHomeworkMsgPreview').textContent;
             const panel = document.getElementById('bulkSendPanel');
@@ -1048,7 +1048,7 @@
             targetStudents.forEach(s => {
                 const globalIdx = students.indexOf(s);
                 const formattedPhone = s.phone ? `966${s.phone.replace(/^0+/, '')}` : '';
-                const finalMsg = `عزيزي ولي أمر الطالبة / ${s.name}\n\n` + baseMsg;
+                const finalMsg = `عزيزي ولي أمر الطالب / ${s.name}\n\n` + baseMsg;
                 const link = `https://wa.me/${formattedPhone}?text=` + encodeURIComponent(finalMsg);
 
                 const itemDiv = document.createElement('div');
@@ -1086,7 +1086,7 @@
             const s = students[selectedStudentIndex];
             let studentMasteredCount = 0;
             lessons.forEach((l, lIdx) => { if (lessonMastery[selectedStudentIndex] && lessonMastery[selectedStudentIndex][lIdx]) studentMasteredCount++; });
-            const msg = `تقرير مادة اللغة الإنجليزية للطالبة / ${s.name}\n- المشاركات: ${s.participation || 0}\n- الواجبات: ${s.homework || 0}\n- الغياب: ${s.absence || 0}\n- الدروس المتقنة: ${studentMasteredCount}/${lessons.length}\n- اختبار 1: ${s.exam1 || 0}/20\n- اختبار 2: ${s.exam2 || 0}/20\nمع تحيات المعلمة: ${TEACHER_NAME}`;
+            const msg = `تقرير مادة اللغة الإنجليزية للطالب / ${s.name}\n- المشاركات: ${s.participation || 0}\n- الواجبات: ${s.homework || 0}\n- الغياب: ${s.absence || 0}\n- الدروس المتقنة: ${studentMasteredCount}/${lessons.length}\n- اختبار 1: ${s.exam1 || 0}/20\n- اختبار 2: ${s.exam2 || 0}/20\nمع تحيات المعلم: ${TEACHER_NAME}`;
             incrementMessageCount(selectedStudentIndex);
             window.open(`https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=` + encodeURIComponent(msg), '_blank');
         }
@@ -1108,7 +1108,7 @@
         function exportExcel() {
             if(students.length === 0) { alert('لا توجد بيانات!'); return; }
             const dataToExport = students.map((s, idx) => ({
-                "م": idx + 1, "اسم الطالبة": s.name, "الصف": s.classCustom || currentGrade, "الجوال": s.phone || '', "الغياب": s.absence || 0, "المشاركة": s.participation || 0, "الواجبات": s.homework || 0, "اختبار 1": s.exam1 || 0, "اختبار 2": s.exam2 || 0
+                "م": idx + 1, "اسم الطالب": s.name, "الصف": s.classCustom || currentGrade, "الجوال": s.phone || '', "الغياب": s.absence || 0, "المشاركة": s.participation || 0, "الواجبات": s.homework || 0, "اختبار 1": s.exam1 || 0, "اختبار 2": s.exam2 || 0
             }));
             const ws = XLSX.utils.json_to_sheet(dataToExport);
             const wb = XLSX.utils.book_new();
@@ -1118,7 +1118,7 @@
 
         function exportToGoogleSheetsCSV() {
             if(students.length === 0) { alert('لا توجد بيانات!'); return; }
-            let csvContent = "\uFEFFاسم الطالبة,الصف,رقم الجوال,الغياب,المشاركة,الواجبات,اختبار 1,اختبار 2\n";
+            let csvContent = "\uFEFFاسم الطالب,الصف,رقم الجوال,الغياب,المشاركة,الواجبات,اختبار 1,اختبار 2\n";
             students.forEach(s => { csvContent += `"${s.name}","${s.classCustom || currentGrade}","${s.phone || ''}",${s.absence || 0},${s.participation || 0},${s.homework || 0},${s.exam1 || 0},${s.exam2 || 0}\n`; });
             const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
             const a = document.createElement('a');
