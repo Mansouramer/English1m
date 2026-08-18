@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المعلم أحمد - الابتدائية الأولى للبنين (لوحة تحكم مادة اللغة الإنجليزية)</title>
+    <title>المعلم مشعل - المتوسطة الأولى للبنين (لوحة تحكم مادة اللغة الإنجليزية)</title>
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
     <style>
         :root {
@@ -123,9 +123,9 @@
     </div>
 
     <div class="header">
-        <h1>الابتدائية الأولى للبنين</h1>
-        <div>إعداد المعلم: أحمد</div>
-        <p>لوحة تحكم معلم مادة اللغة الإنجليزية للمرحلة الابتدائية (وفق المنهج السعودي)</p>
+        <h1>المتوسطة الأولى للبنين</h1>
+        <div>إعداد المعلم: مشعل</div>
+        <p>لوحة تحكم معلم مادة اللغة الإنجليزية للمرحلة المتوسطة (وفق المنهج السعودي)</p>
         <div class="subscription-badge">⏳ نهاية الاشتراك: 2027/07/01</div>
 
         <div class="theme-switcher">
@@ -144,12 +144,9 @@
             <h3 style="margin-bottom: 10px;">📌 اختر الصف الدراسي للمتابعة</h3>
             <div class="form-row" style="margin-bottom: 0;">
                 <select id="globalGradeSelect" onchange="changeGradeLevel(this.value)" style="font-weight: bold; font-size: 16px; color: var(--secondary);">
-                    <option value="الأول الابتدائي">الصف الأول الابتدائي</option>
-                    <option value="الثاني الابتدائي">الصف الثاني الابتدائي</option>
-                    <option value="الثالث الابتدائي">الصف الثالث الابتدائي</option>
-                    <option value="الرابع الابتدائي">الصف الرابع الابتدائي</option>
-                    <option value="الخامس الابتدائي">الصف الخامس الابتدائي</option>
-                    <option value="السادس الابتدائي">الصف السادس الابتدائي</option>
+                    <option value="الأول المتوسط">الصف الأول المتوسط</option>
+                    <option value="الثاني المتوسط">الصف الثاني المتوسط</option>
+                    <option value="الثالث المتوسط">الصف الثالث المتوسط</option>
                 </select>
             </div>
         </div>
@@ -175,7 +172,7 @@
             
             <div class="form-row no-print">
                 <input type="text" id="studentName" placeholder="اسم الطالب (Student Name)">
-                <input type="text" id="studentClassCustom" placeholder="اكتب الصف (مثال: رابع ابتدائي أول)">
+                <input type="text" id="studentClassCustom" placeholder="اكتب الصف (مثال: أول متوسط أول)">
                 <input type="tel" id="studentPhone" maxlength="10" placeholder="رقم جوال ولي الأمر (10 أرقام)">
                 <button onclick="addStudent()">➕ إضافة طالب</button>
             </div>
@@ -374,7 +371,7 @@
                     </select>
                 </div>
                 <div class="form-row" style="margin-top: 10px;">
-                    <input type="text" id="bulkHomeworkDetails" placeholder="تفاصيل الواجب (مثال: Practice book page 20)..." oninput="updateBulkHomeworkMsgPreview()">
+                    <input type="text" id="bulkHomeworkDetails" placeholder="تفاصيل الواجب (مثال: Workbook page 20)..." oninput="updateBulkHomeworkMsgPreview()">
                 </div>
                 <div class="form-row" style="margin-top: 10px;">
                     <input type="text" id="bulkHomeworkExtraNote" placeholder="ملاحظات إضافية (اختياري)..." oninput="updateBulkHomeworkMsgPreview()">
@@ -392,19 +389,19 @@
 
         <!-- قائمة وحدات ودروس مادة اللغة الإنجليزية -->
         <div class="section-card no-print">
-            <h3 id="curriculumTitle">📚 دليل مقرر اللغة الإنجليزية - المرحلة الابتدائية وتتبع التنفيذ</h3>
+            <h3 id="curriculumTitle">📚 دليل مقرر اللغة الإنجليزية - المرحلة المتوسطة وتتبع التنفيذ</h3>
             
             <div class="sub-box" style="margin-bottom: 15px; margin-top: 0;">
                 <h5 style="margin-bottom: 10px;">➕ إضافة درس فردي أو مجموعة دروس دفعة واحدة</h5>
                 
                 <div class="form-row">
                     <input type="text" id="newLessonTitle" placeholder="عنوان الوحدة والدرس...">
-                    <input type="text" id="newLessonDesc" placeholder="تفاصيل المهارات والكلمات...">
+                    <input type="text" id="newLessonDesc" placeholder="تفاصيل المهارات والقواعد...">
                     <button onclick="addNewLesson()">➕ إضافة الدرس الفردي</button>
                 </div>
 
                 <div class="form-row" style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 15px;">
-                    <textarea id="bulkLessonsInput" rows="4" placeholder="أدخل مجموعة دروس دفعة واحدة (كل درس في سطر مستقل)، بالتنسيق التالي:&#10;اسم الوحدة | عنوان الدرس | الوصف والمهارات&#10;مثال:&#10;Unit 2 | Actions | Running and jumping vocabulary" style="width:100%;"></textarea>
+                    <textarea id="bulkLessonsInput" rows="4" placeholder="أدخل مجموعة دروس دفعة واحدة (كل درس في سطر مستقل)، بالتنسيق التالي:&#10;اسم الوحدة | عنوان الدرس | الوصف والمهارات&#10;مثال:&#10;Unit 2 | Grammar | Present simple tense rules" style="width:100%;"></textarea>
                     <button class="btn-info" onclick="addBatchLessons()" style="width:100%;">📥 إضافة مجموعة الدروس دفعة واحدة</button>
                 </div>
             </div>
@@ -422,10 +419,10 @@
     <div id="toast" class="toast">✅ تم حفظ البيانات تلقائياً!</div>
 
     <script>
-        const TEACHER_NAME = "أحمد";
-        const SCHOOL_NAME = "الابتدائية الأولى للبنين";
+        const TEACHER_NAME = "مشعل";
+        const SCHOOL_NAME = "المتوسطة الأولى للبنين";
 
-        let currentGrade = localStorage.getItem('mansour_current_grade_english_v5') || 'الأول الابتدائي';
+        let currentGrade = localStorage.getItem('mansour_current_grade_english_v5') || 'الأول المتوسط';
         document.getElementById('globalGradeSelect').value = currentGrade;
 
         let activeQueryClass = '';
@@ -434,40 +431,28 @@
         const rowsPerPage = 20;
 
         const defaultMotivations = [
-            { id: "1", title: "1. نجم اللغة الإنجليزية المتألق", text: "🌟 **نجم اللغة الإنجليزية المتألق** 🌟\nعزيزي ولي الأمر، نفخر اليوم بتميز ابنك وتألقه في حصة اللغة الإنجليزية ونطق الكلمات بثقة وحماس. بوركت جهودكم!" },
-            { id: "2", title: "2. تفوق ملحوظ في القراءة والنطق", text: "🗣️ **تفوق ملحوظ في مهارات النطق والكلام** 🗣️\nعزيزي ولي الأمر، أظهر ابنك اليوم مهارات رائعة في القراءة والتحدث باللغة الإنجليزية بطلاقة. أحسن صنعاً!" },
-            { id: "3", title: "3. دقة وإتقان في كتابة الكلمات", text: "✍️ **دقة وإتقان في الكتابة والتهجئة** ✍️\nعزيزي ولي الأمر، تميز ابنك اليوم بدقة تهجئة الكلمات الإنجليزية وترتيب الجمل بشكل ممتاز. بارك الله في جهوده!" },
-            { id: "4", title: "4. مشاركة نشطة وفعالة في الحصة", text: "✋ **مشاركة نشطة وتفاعل متميز** ✋\nعزيزي ولي الأمر، تميز ابنك اليوم بحرصه العالي ومشاركته النشطة في الأنشطة الصفية للغة الإنجليزية." },
-            { id: "5", title: "5. تنظيم رائع للدفتر وواجبات مرتبة", text: "📝 **تنظيم رائع للواجبات والأنشطة** 📝\nعزيزي ولي الأمر، نشكر لكم متابعتكم المنزلية. لقد كان واجب ابنك اليوم منظماً، دقيقاً، ومرتباً للغاية." }
+            { id: "1", title: "1. نجم اللغة الإنجليزية المتألق", text: "🌟 **نجم اللغة الإنجليزية المتألق** 🌟\nعزيزي ولي الأمر، نفخر اليوم بتميز ابنك وتألقه في حصة اللغة الإنجليزية ومشاركته الفعالة. بوركت جهودكم!" },
+            { id: "2", title: "2. تفوق ملحوظ في القواعد واللغة", text: "🗣️ **تفوق ملحوظ في مهارات اللغة الإنجليزية** 🗣️\nعزيزي ولي الأمر، أظهر ابنك اليوم مهارات رائعة في استيعاب القواعد والتحدث بطلاقة. أحسن صنعاً!" },
+            { id: "3", title: "3. دقة وإتقان في حل التمارين", text: "✍️ **دقة وإتقان في الأنشطة والتمارين** ✍️\nعزيزي ولي الأمر، تميز ابنك اليوم بحل التمارين بدقة وتركيز عالٍ. بارك الله في جهوده!" },
+            { id: "4", title: "4. مشاركة نشطة وفعالة في الحصة", text: "✋ **مشاركة نشطة وتفاعل متميز** ✋\nعزيزي ولي الأمر، تميز ابنك اليوم بحرصه العالي ومشاركته الفعالة في الأنشطة الصفية." },
+            { id: "5", title: "5. تنظيم رائع للدفتر وواجبات مرتبة", text: "📝 **تنظيم رائع للواجبات والأنشطة** 📝\nعزيزي ولي الأمر، نشكر لكم متابعتكم المنزلية. لقد كان واجب ابنك اليوم منظماً ومرتباً للغاية." }
         ];
 
         let customMotivations = JSON.parse(localStorage.getItem('mansour_custom_motivations_english_v5')) || defaultMotivations;
 
         const gradeEnglishData = {
-            "الأول الابتدائي": [
-                { chapter: "Unit 1: Toys and Things", title: "My Toys", desc: "Vocabulary: doll, ball, car, train. Expressions: What's this? It's a..." },
-                { chapter: "Unit 1: Toys and Things", title: "Colors and Numbers", desc: "Counting numbers 1-5 and recognizing basic colors." },
-                { chapter: "Unit 2: My Classroom", title: "Classroom Objects", desc: "Vocabulary: pen, pencil, book, bag. Actions: Open your book, sit down." }
+            "الأول المتوسط": [
+                { chapter: "Unit 1: Good Morning!", title: "Introductions and Greetings", desc: "Vocabulary: Nice to meet you, greetings, personal pronouns." },
+                { chapter: "Unit 1: Good Morning!", title: "Verb To Be", desc: "Grammar: Affirmative and negative statements with am, is, are." },
+                { chapter: "Unit 2: What's This?", title: "Classroom Objects", desc: "Vocabulary: desk, board, dictionary, backpack. Demonstratives: this, that, these, those." }
             ],
-            "الثاني الابتدائي": [
-                { chapter: "Unit 1: My Friends", title: "Greeting and Names", desc: "Asking and answering: What's your name? My name is..." },
-                { chapter: "Unit 1: My Friends", title: "Parts of the Body", desc: "Vocabulary: head, eyes, ears, nose, mouth, hands, feet." }
+            "الثاني المتوسط": [
+                { chapter: "Unit 1: Around the World", title: "Countries and Nationalities", desc: "Vocabulary: nationalities, languages. Grammar: Where are you from?" },
+                { chapter: "Unit 1: Around the World", title: "Present Simple Tense", desc: "Grammar: Expressing habits and routines using affirmative/negative forms." }
             ],
-            "الثالث الابتدائي": [
-                { chapter: "Unit 1: Good Morning!", title: "Daily Routines", desc: "Morning routines and greetings, school items practice." },
-                { chapter: "Unit 1: Good Morning!", title: "Alphabet Sounds", desc: "Phonics and letters identification A to M." }
-            ],
-            "الرابع الابتدائي": [
-                { chapter: "Unit 1: Feelings and Things", title: "How do you feel?", desc: "Describing emotional states and physical health." },
-                { chapter: "Unit 1: Feelings and Things", title: "Can you...?", desc: "Using 'can' for abilities (swim, fly, run, jump)." }
-            ],
-            "الخامس الابتدائي": [
-                { chapter: "Unit 1: Yesterday and Today", title: "Past Simple Tense", desc: "Talking about past events using was / were and regular verbs." },
-                { chapter: "Unit 1: Yesterday and Today", title: "Places in Town", desc: "Hospital, school, park, restaurant vocabulary." }
-            ],
-            "السادس الابتدائي": [
-                { chapter: "Unit 1: Fun Time", title: "Free Time Activities", desc: "Hobbies, sports, reading, playing video games, swimming." },
-                { chapter: "Unit 1: Fun Time", title: "Adverbs of Frequency", desc: "Always, sometimes, never in daily routines." }
+            "الثالث المتوسط": [
+                { chapter: "Unit 1: Lifestyles", title: "Daily Habits and Routines", desc: "Vocabulary: lifestyle choices, health, frequency adverbs." },
+                { chapter: "Unit 1: Lifestyles", title: "Present Continuous vs Present Simple", desc: "Grammar: Contrasting habitual actions with ongoing actions." }
             ]
         };
 
@@ -954,7 +939,7 @@
             const btn = document.getElementById('whatsappLessonBtn');
             if(lessonIdx === "") { preview.textContent = "اختر الدرس أعلاه لتوليد نص الرسالة..."; btn.href = "#"; return; }
             const l = lessons[lessonIdx];
-            const msg = `عزيزي ولي أمر الطالب / ${s.name}\nنحيطكم علماً بأننا تناولنا اليوم في مادة اللغة الإنجليزية:\n📘 (${l.chapter}) - ${l.title}\n💡 المهارات والمفردات: ${l.desc}\nمع تحيات المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            const msg = `عزيزي ولي أمر الطالب / ${s.name}\nنحيطكم علماً بأننا تناولنا اليوم في مادة اللغة الإنجليزية:\n📘 (${l.chapter}) - ${l.title}\n💡 المهارات والقواعد: ${l.desc}\nمع تحيات المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
             preview.textContent = msg;
             btn.href = `https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=` + encodeURIComponent(msg);
         }
@@ -1021,7 +1006,7 @@
             if(details) {
                 msg += `📝 المطلوب: ${details}\n`;
             } else {
-                msg += `📝 المطلوب: حل تدريبات الدرس في كتاب النشاط.\n`;
+                msg += `📝 المطلوب: حل تمارين الدرس في كتاب التمارين.\n`;
             }
             if(note) msg += `📌 ملاحظات: ${note}\n`;
             msg += `\nمع خالص الشكر، المعلم: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
