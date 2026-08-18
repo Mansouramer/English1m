@@ -124,9 +124,9 @@
 
     <div class="header">
         <h1>الابتدائية الأولى للبنات</h1>
-        <div>إعداد المعلمة: تهاني مهنا الحجيلي</div>
+        <div>إعداد المعلمة: تهاني مهنا الحجيلي[cite: 1]</div>
         <p>لوحة تحكم معلمة مادة اللغة الإنجليزية للمرحلة الابتدائية (وفق المنهج السعودي)</p>
-        <div class="subscription-badge">⏳ نهاية الاشتراك: 2027/07/01</div>
+        <div class="subscription-badge">⏳ نهاية الاشتراك: 2027/07/01[cite: 1]</div>
 
         <div class="theme-switcher">
             <span style="font-size: 12px; margin-left: 5px;">🎨 المظهر:</span>
@@ -303,7 +303,7 @@
             </div>
         </div>
 
-        <!-- استعلام عن طالبة -->
+        <!-- استعلام عن طالبة وتفاصيل الرسائل التشجيعية الفردية -->
         <div class="section-card" id="studentReportSection">
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid rgba(0,0,0,0.1); padding-bottom: 10px; margin-bottom: 15px;">
                 <h3 style="margin: 0; border: none; padding: 0;">🔍 استعلام وتتبع طالبة محددة</h3>
@@ -332,7 +332,7 @@
                     <button class="whatsapp-btn" onclick="sendFullReportWhatsApp()" style="border: none; cursor: pointer; margin-top: 0; width: 100%;">📤 إرسال التقرير الشامل لولي الأمر عبر واتساب</button>
                 </div>
                 <div class="sub-box">
-                    <h5>💬 إشعار ولي الأمر بالدرس عبر الواتساب</h5>
+                    <h5>💬 إشعار ولي الأمر بالدرس والمهارة عبر الواتساب</h5>
                     <div class="no-print">📱 رقم الجوال: <span id="sdPhone">لا يوجد</span></div>
                     <div class="form-row no-print" style="margin-top: 10px;">
                         <select id="selectLesson" onchange="updateLessonMsg()">
@@ -342,6 +342,51 @@
                     <div id="lessonMsgPreview" class="preview-msg">اختر موضوع الدرس أعلاه لتوليد نص الرسالة...</div>
                     <a id="whatsappLessonBtn" href="#" target="_blank" class="whatsapp-btn no-print" onclick="incrementMessageCount()" style="display: block;">📲 إرسال مباشر لولي الأمر</a>
                 </div>
+
+                <div class="sub-box">
+                    <h5>✨ إرسال رسائل تشجيعية وشكر وتقدير للطالبة</h5>
+                    <div class="form-row no-print">
+                        <select id="selectMotivation" onchange="updateMotivationMsg()">
+                            <option value="">-- اختر الرسالة التشجيعية والتحفيزية --</option>
+                        </select>
+                    </div>
+                    <div class="form-row no-print" style="margin-top: 10px; background: rgba(37, 99, 235, 0.05); padding: 10px; border-radius: 6px;">
+                        <input type="text" id="newMotivationTitle" placeholder="عنوان الرسالة الجديدة..." style="max-width: 220px;">
+                        <input type="text" id="newMotivationText" placeholder="اكتب نص الرسالة التحفيزية هنا...">
+                        <button onclick="addNewMotivation()">➕ إضافة رسالة تحفيزية</button>
+                    </div>
+                    <div id="motivationMsgPreview" class="preview-msg">اختر رسالة تحفيزية لعرض نص الشكر والتحفيز...</div>
+                    <a id="whatsappMotivationBtn" href="#" target="_blank" class="whatsapp-btn no-print" onclick="incrementMessageCount()" style="display: block;">🏆 إرسال رسالة التشجيع لولي الأمر</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- إرسال جماعي للواجب لأولياء الأمور -->
+        <div class="section-card no-print">
+            <h3>📢 إرسال الواجب المدرسي الجماعي لأولياء الأمور</h3>
+            <div class="sub-box" style="margin-top: 0;">
+                <div class="form-row">
+                    <select id="bulkTargetClass">
+                        <option value="ALL">جميع الصفوف</option>
+                    </select>
+                    <select id="bulkSelectHomeworkLesson" onchange="updateBulkHomeworkMsgPreview()">
+                        <option value="">-- اختر الدرس لتحديد الواجب المراد إرساله --</option>
+                    </select>
+                </div>
+                <div class="form-row" style="margin-top: 10px;">
+                    <input type="text" id="bulkHomeworkDetails" placeholder="تفاصيل الواجب (مثال: Practice book page 20)..." oninput="updateBulkHomeworkMsgPreview()">
+                </div>
+                <div class="form-row" style="margin-top: 10px;">
+                    <input type="text" id="bulkHomeworkExtraNote" placeholder="ملاحظات إضافية (اختياري)..." oninput="updateBulkHomeworkMsgPreview()">
+                </div>
+                <div id="bulkHomeworkMsgPreview" class="preview-msg">اختر الصف والدرس وأدخل تفاصيل الواجب لعرض نموذج رسالة الواجب الجماعية...</div>
+                
+                <div id="bulkSendPanel" style="display: none; margin-top: 15px; background: rgba(0,0,0,0.04); padding: 15px; border-radius: 8px; border: 1px solid var(--secondary);">
+                    <h5 style="margin-top: 0; color: var(--secondary);">📤 قائمة إرسال الواجب الجماعي (انقر فوق زر كل ولي أمر للإرسال الفردي بأمان):</h5>
+                    <div id="bulkSendListContainer" style="display: flex; flex-direction: column; gap: 8px; max-height: 250px; overflow-y: auto; margin-top: 10px;"></div>
+                </div>
+
+                <button class="whatsapp-btn" onclick="prepareBulkHomeworkBatch()" style="border: none; cursor: pointer; font-size: 15px; width: 100%;">🚀 تجهيز روابط إرسال الواجب الجماعي</button>
             </div>
         </div>
 
@@ -380,40 +425,42 @@
         let currentPage = 1;
         const rowsPerPage = 20;
 
-        // مناهج اللغة الإنجليزية للمرحلة الابتدائية (السعودية - We Can / Smart Class أو مناهج معتمدة)
+        // الرسائل التحفيزية الافتتاحية
+        const defaultMotivations = [
+            { id: "1", title: "1. نجمة اللغة الإنجليزية المتألقة", text: "🌟 **نجمة اللغة الإنجليزية المتألقة** 🌟\nعزيزي ولي الأمر، نفخر اليوم بتميز ابنتكم وتألقها في حصة اللغة الإنجليزية ونطق الكلمات بثقة وحماس. بوركت جهودكم!" },
+            { id: "2", title: "2. تفوق ملحوظ في القراءة والنطق", text: "🗣️ **تفوق ملحوظ في مهارات النطق والكلام** 🗣️\nعزيزي ولي الأمر، أظهرت ابنتكم اليوم مهارات رائعة في القراءة والتحدث باللغة الإنجليزية بطلاقة. أحسنت صنعاً!" },
+            { id: "3", title: "3. دقة وإتقان في كتابة الكلمات", text: "✍️ **دقة وإتقان في الكتابة والتهجئة** ✍️\nعزيزي ولي الأمر، تميزت ابنتكم اليوم بدقة تهجئة الكلمات الإنجليزية وترتيب الجمل بشكل ممتاز. بارك الله في جهودها!" },
+            { id: "4", title: "4. مشاركة نشطة وفعالة في الحصة", text: "✋ **مشاركة نشطة وتفاعل متميز** ✋\nعزيزي ولي الأمر، تميزت ابنتكم اليوم بحرصها العالي ومشاركتها النشطة في الأنشطة الصفية للغة الإنجليزية." },
+            { id: "5", title: "5. تنظيم رائع للدفتر وواجبات مرتبة", text: "📝 **تنظيم رائع للواجبات والأنشطة** 📝\nعزيزي ولي الأمر، نشكر لكم متابعتكم المنزلية. لقد كان واجب ابنتكم اليوم منظماً، دقيقاً، ومرتباً للغاية." }
+        ];
+
+        let customMotivations = JSON.parse(localStorage.getItem('mansour_custom_motivations_english_v5')) || defaultMotivations;
+
         const gradeEnglishData = {
             "الأول الابتدائي": [
                 { chapter: "Unit 1: Toys and Things", title: "My Toys", desc: "Vocabulary: doll, ball, car, train. Expressions: What's this? It's a..." },
                 { chapter: "Unit 1: Toys and Things", title: "Colors and Numbers", desc: "Counting numbers 1-5 and recognizing basic colors." },
-                { chapter: "Unit 2: My Classroom", title: "Classroom Objects", desc: "Vocabulary: pen, pencil, book, bag. Actions: Open your book, sit down." },
-                { chapter: "Unit 2: My Classroom", title: "Let's Talk", desc: "Basic greetings: Hello, Good morning, How are you?" }
+                { chapter: "Unit 2: My Classroom", title: "Classroom Objects", desc: "Vocabulary: pen, pencil, book, bag. Actions: Open your book, sit down." }
             ],
             "الثاني الابتدائي": [
                 { chapter: "Unit 1: My Friends", title: "Greeting and Names", desc: "Asking and answering: What's your name? My name is..." },
-                { chapter: "Unit 1: My Friends", title: "Parts of the Body", desc: "Vocabulary: head, eyes, ears, nose, mouth, hands, feet." },
-                { chapter: "Unit 2: Feelings and Actions", title: "How Are You?", desc: "Expressing feelings: happy, sad, tired, angry, hungry." },
-                { chapter: "Unit 2: Feelings and Actions", title: "Action Verbs", desc: "Running, jumping, walking, clapping, sitting." }
+                { chapter: "Unit 1: My Friends", title: "Parts of the Body", desc: "Vocabulary: head, eyes, ears, nose, mouth, hands, feet." }
             ],
             "الثالث الابتدائي": [
                 { chapter: "Unit 1: Good Morning!", title: "Daily Routines", desc: "Morning routines and greetings, school items practice." },
-                { chapter: "Unit 1: Good Morning!", title: "Alphabet Sounds", desc: "Phonics and letters identification A to M." },
-                { chapter: "Unit 2: My Room", title: "Furniture and Positions", desc: "In, on, under, bed, chair, table, box." },
-                { chapter: "Unit 2: My Room", title: "Let's Build Sentences", desc: "Simple sentence structures describing room items." }
+                { chapter: "Unit 1: Good Morning!", title: "Alphabet Sounds", desc: "Phonics and letters identification A to M." }
             ],
             "الرابع الابتدائي": [
                 { chapter: "Unit 1: Feelings and Things", title: "How do you feel?", desc: "Describing emotional states and physical health." },
-                { chapter: "Unit 1: Feelings and Things", title: "Can you...?", desc: "Using 'can' for abilities (swim, fly, run, jump)." },
-                { chapter: "Unit 2: School Days", title: "Subjects and Timetable", desc: "English, Math, Science, Art, PE vocabulary and schedules." }
+                { chapter: "Unit 1: Feelings and Things", title: "Can you...?", desc: "Using 'can' for abilities (swim, fly, run, jump)." }
             ],
             "الخامس الابتدائي": [
                 { chapter: "Unit 1: Yesterday and Today", title: "Past Simple Tense", desc: "Talking about past events using was / were and regular verbs." },
-                { chapter: "Unit 1: Yesterday and Today", title: "Places in Town", desc: "Hospital, school, park, restaurant vocabulary." },
-                { chapter: "Unit 2: Jobs and Work", title: "What do you want to be?", desc: "Teacher, doctor, engineer, pilot, firefighter vocabulary." }
+                { chapter: "Unit 1: Yesterday and Today", title: "Places in Town", desc: "Hospital, school, park, restaurant vocabulary." }
             ],
             "السادس الابتدائي": [
                 { chapter: "Unit 1: Fun Time", title: "Free Time Activities", desc: "Hobbies, sports, reading, playing video games, swimming." },
-                { chapter: "Unit 1: Fun Time", title: "Adverbs of Frequency", desc: "Always, sometimes, never in daily routines." },
-                { chapter: "Unit 2: The World Around Us", title: "Animals and Habitats", desc: "Wild animals, oceans, deserts, mountains and comparisons." }
+                { chapter: "Unit 1: Fun Time", title: "Adverbs of Frequency", desc: "Always, sometimes, never in daily routines." }
             ]
         };
 
@@ -438,6 +485,7 @@
             selectedStudentIndex = '';
             currentPage = 1;
             document.getElementById('studentSearchInput').value = '';
+            document.getElementById('bulkSendPanel').style.display = 'none';
             document.getElementById('curriculumTitle').textContent = `📚 دليل مقرر اللغة الإنجليزية - ${currentGrade} وتتبع التنفيذ`;
             renderLessons();
             renderMasteryDropdowns();
@@ -448,13 +496,20 @@
         function renderLessons() {
             const selectLesson = document.getElementById('selectLesson');
             selectLesson.innerHTML = '<option value="">-- اختر الدرس والمهارة --</option>';
+            const selectMotivation = document.getElementById('selectMotivation');
+            selectMotivation.innerHTML = '<option value="">-- اختر الرسالة التشجيعية والتحفيزية --</option>';
+            const bulkSelectHomeworkLesson = document.getElementById('bulkSelectHomeworkLesson');
+            bulkSelectHomeworkLesson.innerHTML = '<option value="">-- اختر الدرس لتحديد الواجب المراد إرساله --</option>';
+
             const mainLessonsContainer = document.getElementById('mainLessonsContainer');
             mainLessonsContainer.innerHTML = '';
             let executedCount = 0;
+            let lessonsGroup = '';
 
             lessons.forEach((l, idx) => {
                 const isExecuted = !!lessonStatus[idx];
                 if(isExecuted) executedCount++;
+                lessonsGroup += `<option value="lesson-${idx}">[${l.chapter}] ${l.title}</option>`;
                 selectLesson.innerHTML += `<option value="${idx}">[${l.chapter}] ${l.title}</option>`;
                 
                 const card = document.createElement('div');
@@ -474,6 +529,13 @@
                 `;
                 mainLessonsContainer.appendChild(card);
             });
+
+            bulkSelectHomeworkLesson.innerHTML += lessonsGroup;
+
+            customMotivations.forEach((m, idx) => {
+                selectMotivation.innerHTML += `<option value="motiv-${idx}">${m.title}</option>`;
+            });
+
             document.getElementById('totalExecutedLessons').textContent = `${executedCount} / ${lessons.length}`;
             renderMasteryDropdowns();
         }
@@ -660,6 +722,7 @@
             });
             updateExamClassSelect(classesSet);
             updateMasteryClassSelect(classesSet);
+            updateBulkTargetSelect(classesSet);
         }
 
         function filterByClass(cName) { activeQueryClass = cName; currentPage = 1; renderClassesQuery(); renderStudentsTable(); }
@@ -690,6 +753,12 @@
             select.innerHTML = '<option value="">-- جميع الصفوف --</option>';
             classesSet.forEach(cName => select.innerHTML += `<option value="${cName}">${cName}</option>`);
             if(classesSet.has(currentVal)) select.value = currentVal;
+        }
+
+        function updateBulkTargetSelect(classesSet) {
+            const select = document.getElementById('bulkTargetClass');
+            select.innerHTML = '<option value="ALL">جميع الصفوف</option>';
+            classesSet.forEach(cName => select.innerHTML += `<option value="${cName}">${cName}</option>`);
         }
 
         function renderMasteryTable() {
@@ -830,6 +899,7 @@
             document.getElementById('sdMessages').textContent = s.messages || 0;
             document.getElementById('sdPhone').textContent = s.phone || 'لا يوجد رقم مسجل';
             updateLessonMsg();
+            updateMotivationMsg();
         }
 
         function updateLessonMsg() {
@@ -843,6 +913,128 @@
             const msg = `عزيزي ولي أمر الطالبة / ${s.name}\nنحيطكم علماً بأننا تناولنا اليوم في مادة اللغة الإنجليزية:\n📘 (${l.chapter}) - ${l.title}\n💡 المهارات والمفردات: ${l.desc}\nمع تحيات المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
             preview.textContent = msg;
             btn.href = `https://wa.me/966${s.phone ? s.phone.replace(/^0+/, '') : ''}?text=` + encodeURIComponent(msg);
+        }
+
+        function updateMotivationMsg() {
+            if(selectedStudentIndex === '') return;
+            const s = students[selectedStudentIndex];
+            const motivVal = document.getElementById('selectMotivation').value;
+            const preview = document.getElementById('motivationMsgPreview');
+            const btn = document.getElementById('whatsappMotivationBtn');
+
+            if(motivVal === "") {
+                preview.textContent = "اختر رسالة تحفيزية لعرض نص الشكر والتحفيز...";
+                btn.href = "#";
+                return;
+            }
+
+            let text = "";
+            if(motivVal.startsWith('motiv-')) {
+                const idx = motivVal.split('-')[1];
+                text = customMotivations[idx].text;
+            }
+
+            const finalMsg = `إلى ولي أمر الطالبة / ${s.name}\n\n${text}\n\nمع خالص الشكر والتقدير، المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            preview.textContent = finalMsg;
+            const formattedPhone = s.phone ? `966${s.phone.replace(/^0+/, '')}` : '';
+            btn.href = `https://wa.me/${formattedPhone}?text=` + encodeURIComponent(finalMsg);
+        }
+
+        function addNewMotivation() {
+            const title = document.getElementById('newMotivationTitle').value.trim();
+            const text = document.getElementById('newMotivationText').value.trim();
+            if(!title || !text) { alert('الرجاء كتابة عنوان ونصح الرسالة التشجيعية'); return; }
+
+            customMotivations.push({ id: Date.now().toString(), title: title, text: text });
+            localStorage.setItem('mansour_custom_motivations_english_v5', JSON.stringify(customMotivations));
+            
+            document.getElementById('newMotivationTitle').value = '';
+            document.getElementById('newMotivationText').value = '';
+            renderLessons();
+            showToast('🌟 تمت إضافة رسالة التحفيز بنجاح!');
+        }
+
+        function updateBulkHomeworkMsgPreview() {
+            const val = document.getElementById('bulkSelectHomeworkLesson').value;
+            const details = document.getElementById('bulkHomeworkDetails').value.trim();
+            const note = document.getElementById('bulkHomeworkExtraNote').value.trim();
+            const preview = document.getElementById('bulkHomeworkMsgPreview');
+
+            if(!val) {
+                preview.textContent = "اختر الصف والدرس وأدخل تفاصيل الواجب لعرض نموذج رسالة الواجب الجماعية...";
+                return;
+            }
+
+            let lessonTitle = "", chapterName = "";
+            if(val.startsWith('lesson-')) {
+                const idx = val.split('-')[1];
+                const l = lessons[idx];
+                chapterName = l.chapter;
+                lessonTitle = l.title;
+            }
+
+            let msg = `أولياء الأمور الأفاضل، نود إحاطتكم بأن واجب مادة اللغة الإنجليزية للدرس:\n📘 (${chapterName}) - ${lessonTitle}\n`;
+            if(details) {
+                msg += `📝 المطلوب: ${details}\n`;
+            } else {
+                msg += `📝 المطلوب: حل تدريبات الدرس في كتاب النشاط.\n`;
+            }
+            if(note) msg += `📌 ملاحظات: ${note}\n`;
+            msg += `\nمع خالص الشكر، المعلمة: ${TEACHER_NAME} - ${SCHOOL_NAME}`;
+            preview.textContent = msg;
+        }
+
+        function prepareBulkHomeworkBatch() {
+            const targetClass = document.getElementById('bulkTargetClass').value;
+            const val = document.getElementById('bulkSelectHomeworkLesson').value;
+            if(!val) { alert('الرجاء اختيار الدرس لتحديد الواجب المراد إرساله'); return; }
+
+            let targetStudents = students;
+            if(targetClass !== 'ALL') {
+                targetStudents = students.filter(s => (s.classCustom || currentGrade) === targetClass);
+            }
+            targetStudents = targetStudents.filter(s => s.phone && s.phone.trim() !== '');
+            if(targetStudents.length === 0) { alert('لا توجد أرقام جوالات مسجلة للطالبات في الصف المستهدف'); return; }
+
+            const baseMsg = document.getElementById('bulkHomeworkMsgPreview').textContent;
+            const panel = document.getElementById('bulkSendPanel');
+            const listContainer = document.getElementById('bulkSendListContainer');
+            listContainer.innerHTML = '';
+
+            targetStudents.forEach(s => {
+                const globalIdx = students.indexOf(s);
+                const formattedPhone = s.phone ? `966${s.phone.replace(/^0+/, '')}` : '';
+                const finalMsg = `عزيزي ولي أمر الطالبة / ${s.name}\n\n` + baseMsg;
+                const link = `https://wa.me/${formattedPhone}?text=` + encodeURIComponent(finalMsg);
+
+                const itemDiv = document.createElement('div');
+                itemDiv.style.display = 'flex';
+                itemDiv.style.justifyContent = 'space-between';
+                itemDiv.style.alignItems = 'center';
+                itemDiv.style.background = 'var(--card-bg)';
+                itemDiv.style.padding = '8px 12px';
+                itemDiv.style.borderRadius = '6px';
+                itemDiv.style.border = '1px solid rgba(0,0,0,0.1)';
+
+                itemDiv.innerHTML = `
+                    <div><strong>${s.name}</strong> <span class="class-badge" style="font-size:10px;">${s.classCustom || currentGrade}</span></div>
+                    <a href="${link}" target="_blank" class="whatsapp-btn" style="margin-top:0; padding:6px 12px; font-size:12px;" onclick="markMessageSentFromBulk(${globalIdx}, this)">📤 إرسال لولي الأمر</a>
+                `;
+                listContainer.appendChild(itemDiv);
+            });
+
+            panel.style.display = 'block';
+            showToast(`🚀 تم تجهيز قائمة إرسال لعدد (${targetStudents.length}) ولي أمر بنجاح!`);
+        }
+
+        function markMessageSentFromBulk(globalIdx, btnElement) {
+            if(students[globalIdx]) {
+                students[globalIdx].messages = (students[globalIdx].messages || 0) + 1;
+                localStorage.setItem(getStorageKeyForStudents(), JSON.stringify(students));
+                render();
+                btnElement.style.background = '#6b7280';
+                btnElement.textContent = '✅ تم الإرسال';
+            }
         }
 
         function sendFullReportWhatsApp() {
@@ -892,7 +1084,7 @@
         }
 
         function exportData() {
-            const backupPackage = { students, lessons, lessonStatus, lessonMastery };
+            const backupPackage = { students, lessons, lessonStatus, lessonMastery, customMotivations };
             const a = document.createElement('a');
             a.href = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(backupPackage));
             a.download = `backup_english_${currentGrade}.json`;
@@ -908,6 +1100,7 @@
                     const imported = JSON.parse(e.target.result);
                     if(imported.students) { students = imported.students; localStorage.setItem(getStorageKeyForStudents(), JSON.stringify(students)); }
                     if(imported.lessons) { lessons = imported.lessons; localStorage.setItem(getStorageKeyForLessons(), JSON.stringify(lessons)); }
+                    if(imported.customMotivations) { customMotivations = imported.customMotivations; localStorage.setItem('mansour_custom_motivations_english_v5', JSON.stringify(customMotivations)); }
                     renderLessons(); render();
                     showToast('📂 تم الاسترجاع بنجاح!');
                 } catch(err) { alert('خطأ في الملف.'); }
