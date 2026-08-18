@@ -393,6 +393,7 @@
         <!-- قائمة وحدات ودروس مادة اللغة الإنجليزية -->
         <div class="section-card no-print">
             <h3 id="curriculumTitle">📚 دليل مقرر اللغة الإنجليزية - المرحلة الابتدائية وتتبع التنفيذ</h3>
+            
             <div class="sub-box" style="margin-bottom: 15px; margin-top: 0;">
                 <h5 style="margin-bottom: 10px;">➕ إضافة درس فردي أو مجموعة دروس دفعة واحدة</h5>
                 
@@ -403,10 +404,11 @@
                 </div>
 
                 <div class="form-row" style="margin-top: 15px; border-top: 1px dashed #ccc; padding-top: 15px;">
-                    <textarea id="bulkLessonsInput" rows="3" placeholder="أدخل مجموعة دروس دفعة واحدة (كل درس في سطر مستقل)، بحيث يكون التنسيق كالتالي:&#10;اسم الوحدة | عنوان الدرس | الوصف والتفاصيل" style="width:100%;"></textarea>
+                    <textarea id="bulkLessonsInput" rows="4" placeholder="أدخل مجموعة دروس دفعة واحدة (كل درس في سطر مستقل)، بالتنسيق التالي:&#10;اسم الوحدة | عنوان الدرس | الوصف والمهارات&#10;مثال:&#10;Unit 2 | Actions | Running and jumping vocabulary" style="width:100%;"></textarea>
                     <button class="btn-info" onclick="addBatchLessons()" style="width:100%;">📥 إضافة مجموعة الدروس دفعة واحدة</button>
                 </div>
             </div>
+
             <div class="lessons-grid" id="mainLessonsContainer"></div>
         </div>
 
